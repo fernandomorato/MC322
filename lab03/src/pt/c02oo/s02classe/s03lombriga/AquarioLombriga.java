@@ -45,7 +45,7 @@ public class AquarioLombriga {
 		if (esquerda) {
 			for (int i = 1; i < posAtual; i++)
 				aquario += '#';
-			aquario += '0';
+			aquario += 'O';
 			for (int i = posAtual + 1; i <= posAtual + tamanhoLombriga - 1; i++)
 				aquario += '@';
 			for (int i = posAtual + tamanhoLombriga; i <= tamanhoAquario; i++)
@@ -57,7 +57,7 @@ public class AquarioLombriga {
 			for (int i = posAtual - tamanhoLombriga + 1; i < posAtual; i++) {
 				aquario += '@';
 			}
-			aquario += '0';
+			aquario += 'O';
 			for (int i = posAtual + 1; i <= tamanhoAquario; i++) {
 				aquario += '#';
 			}
