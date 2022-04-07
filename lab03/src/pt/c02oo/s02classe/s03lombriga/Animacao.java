@@ -3,7 +3,7 @@ import pt.c02oo.s02classe.s03lombriga.*;
 
 public class Animacao {
 	AquarioLombriga aquarioLombriga;
-	String estadoAtual;
+	String estadoAtual, animacao;
 	int indiceAtual;
 	public Animacao(String animacao) {
 		int	tamanhoAquario = Character.getNumericValue(animacao.charAt(0)) * 10 + Character.getNumericValue(animacao.charAt(1));
@@ -11,6 +11,7 @@ public class Animacao {
 		int	posInicial = Character.getNumericValue(animacao.charAt(4)) * 10 + Character.getNumericValue(animacao.charAt(5));
 		aquarioLombriga = new AquarioLombriga(tamanhoAquario, tamanhoLombriga, posInicial);
 		estadoAtual = aquarioLombriga.apresenta();
+		this.animacao = animacao;
 		this.indiceAtual = 6;
 	}
 	
@@ -20,7 +21,7 @@ public class Animacao {
 	}
 	
 	public void passo() {
-		char ch = estadoAtual.charAt(indiceAtual);
+		char ch = animacao.charAt(indiceAtual);
 		if (ch == 'C') {
 			aquarioLombriga.crescer();
 		} else if (ch == 'M') {
@@ -28,5 +29,6 @@ public class Animacao {
 		} else {
 			aquarioLombriga.virar();
 		}
+		indiceAtual++;
 	}
 }

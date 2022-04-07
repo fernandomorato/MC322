@@ -14,7 +14,9 @@ public class AquarioLombriga {
 	}
 	
 	public void crescer() {
-		if (posAtual + tamanhoLombriga <= tamanhoAquario)
+		if (esquerda && posAtual + tamanhoLombriga <= tamanhoAquario)
+			tamanhoLombriga++;
+		else if (!esquerda && posAtual - tamanhoLombriga >= 1)
 			tamanhoLombriga++;
 	}
 	
